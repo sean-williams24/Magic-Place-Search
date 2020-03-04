@@ -85,8 +85,7 @@
 				CE37D046240EB4BC00D85D49 /* AppDelegate.swift */,
 				CE37D048240EB4BC00D85D49 /* SceneDelegate.swift */,
 				CE37D05C240EB5CE00D85D49 /* Model */,
-				CE37D04A240EB4BC00D85D49 /* PlaceSearchViewController.swift */,
-				CEF81B66240FB35900235CFE /* ResultsTableViewController.swift */,
+				CEF81B6A241022C700235CFE /* Controllers */,
 				CEF81B68240FB4CF00235CFE /* PlaceTableViewCell.swift */,
 				CE37D04C240EB4BC00D85D49 /* Main.storyboard */,
 				CE37D04F240EB4BF00D85D49 /* Assets.xcassets */,
@@ -99,11 +98,20 @@
 		CE37D05C240EB5CE00D85D49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CEF81B62240FA6D500235CFE /* Auth.swift */,
 				CE37D05A240EB5BA00D85D49 /* PlacesClient.swift */,
 				CEF81B60240EC8D900235CFE /* Place.swift */,
-				CEF81B62240FA6D500235CFE /* Auth.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CEF81B6A241022C700235CFE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE37D04A240EB4BC00D85D49 /* PlaceSearchViewController.swift */,
+				CEF81B66240FB35900235CFE /* ResultsTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		F2193062408D440481F7A3CF /* Frameworks */ = {
