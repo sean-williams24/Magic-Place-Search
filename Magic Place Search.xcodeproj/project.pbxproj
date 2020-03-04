@@ -15,6 +15,7 @@
 		CE37D053240EB4BF00D85D49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE37D051240EB4BF00D85D49 /* LaunchScreen.storyboard */; };
 		CE37D05B240EB5BA00D85D49 /* PlacesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37D05A240EB5BA00D85D49 /* PlacesClient.swift */; };
 		CEF81B61240EC8D900235CFE /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF81B60240EC8D900235CFE /* Place.swift */; };
+		CEF81B63240FA6D500235CFE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF81B62240FA6D500235CFE /* Auth.swift */; };
 		DBABCD63A041B597A7F05AF9 /* Pods_Magic_Place_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86465F6AF0F37C9B4008402B /* Pods_Magic_Place_Search.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		CE37D054240EB4BF00D85D49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE37D05A240EB5BA00D85D49 /* PlacesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesClient.swift; sourceTree = "<group>"; };
 		CEF81B60240EC8D900235CFE /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		CEF81B62240FA6D500235CFE /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				CE37D05A240EB5BA00D85D49 /* PlacesClient.swift */,
 				CEF81B60240EC8D900235CFE /* Place.swift */,
+				CEF81B62240FA6D500235CFE /* Auth.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				CE37D04B240EB4BC00D85D49 /* PlaceSearchViewController.swift in Sources */,
 				CE37D047240EB4BC00D85D49 /* AppDelegate.swift in Sources */,
 				CE37D049240EB4BC00D85D49 /* SceneDelegate.swift in Sources */,
+				CEF81B63240FA6D500235CFE /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
