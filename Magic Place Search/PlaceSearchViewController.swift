@@ -25,7 +25,6 @@ class PlaceSearchViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - Properties
     
-    let LA = "location=\(34.052235),\(-118.243683)"
     var locationManager: CLLocationManager!
     var userLocation: CLLocation!
 
@@ -65,6 +64,7 @@ class PlaceSearchViewController: UIViewController, CLLocationManagerDelegate {
 
         locationManager.stopUpdatingLocation()
     }
+    
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
@@ -124,7 +124,6 @@ class PlaceSearchViewController: UIViewController, CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
         
         PlacesClient.nearbyPlaceSearch(lat: Double(lat)!, lon: Double(lon)!, completion: handleSearchCompletion(places:))
-        
     }
     
     
@@ -142,13 +141,11 @@ class PlaceSearchViewController: UIViewController, CLLocationManagerDelegate {
         let lon = userLocation.coordinate.longitude
     
         PlacesClient.nearbyPlaceSearch(lat: lat, lon: lon, completion: handleSearchCompletion(places:))
-
     }
     
     
     
     @IBAction func mapSearchTapped(_ sender: Any) {
-        
         let lat = mapView.centerCoordinate.latitude
         let lon = mapView.centerCoordinate.longitude
         

@@ -13,7 +13,7 @@ import SwiftyJSON
 class PlacesClient {
     
     static let basePlaceSearchURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
-    static let parameters = "&type=cafe&keyword=food"
+    static let parameters = "&type=lodging&keyword=surf"
     
     class func nearbyPlaceSearch(lat: Double, lon: Double, radius: Double = 1000, completion: @escaping ([Place]?) -> Void) {
         var places: [Place] = []

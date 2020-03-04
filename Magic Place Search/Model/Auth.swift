@@ -9,5 +9,5 @@
 import Foundation
 
 struct Auth {
-    static let key = ""
+    static let key = "YOUR_API_KEY_HERE"
 }
