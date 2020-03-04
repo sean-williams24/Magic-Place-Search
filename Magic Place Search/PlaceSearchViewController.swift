@@ -7,27 +7,26 @@
 //
 
 import Alamofire
+import MapKit
 import SwiftyJSON
 import UIKit
 
-class PlaceSearchViewController: UIViewController {
+class PlaceSearchViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - Outlets
     
     @IBOutlet weak var latTextfield: UITextField!
     @IBOutlet weak var lonTextfield: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var mapView: MKMapView!
     
     
     // MARK: - Properties
     
-    let basePlaceSearchURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
-    let radius = "&radius=20000"
-    let type = "&type=cafe"
-    let keyword = "&keyword=surf"
-    var location = ""
+
     var places: [Place] = []
     let LA = "location=\(34.052235),\(-118.243683)"
+    var locationManager: CLLocationManager!
 
     
     
@@ -35,7 +34,10 @@ class PlaceSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
 
     }
@@ -50,6 +52,23 @@ class PlaceSearchViewController: UIViewController {
     
     // MARK: - Location Methods
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let userLocation = locations.first else { return }
+        let lat = userLocation.coordinate.latitude
+        let lon = userLocation.coordinate.longitude
+        
+        locationManager.stopUpdatingLocation()
+        places = []
+        
+        PlacesClient.nearbyPlaceSearch(lat: lat, lon: lon) { places in
+            let vc = self.storyboard?.instantiateViewController(identifier: "ResultsVC") as! ResultsTableViewController
+            if let places = places {
+                vc.places = places
+            }
+            self.present(vc, animated: true)
+        }
+
+    }
     
     
     // MARK: - Private Methods
@@ -73,12 +92,11 @@ class PlaceSearchViewController: UIViewController {
             
             return
         }
-        places = []
         
-        location = "location=\(lat),\(lon)"
-        
-        let url = basePlaceSearchURL + location + radius + type + keyword + "&key=" + Auth.key
-
+//        places = []
+//        location = "location=\(lat),\(lon)"
+//        let url = basePlaceSearchURL + LA + radius + type + keyword + "&key=" + Auth.key
+        let url = ""
         AF.request(url).responseJSON { (response) in
             switch response.result {
             case .success(let value):
@@ -95,13 +113,26 @@ class PlaceSearchViewController: UIViewController {
                         vc.places = self.places
                         self.present(vc, animated: true)
                     }
-
                 }
                 
             case .failure(let error):
                 print(error)
             }
         }
+    }
+    
+    
+    @IBAction func useCurrentLocationTapped(_ sender: Any) {
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+        
+    }
+    
+    
+    
+    @IBAction func mapSearchTapped(_ sender: Any) {
     }
     
 }

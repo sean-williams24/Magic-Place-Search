@@ -15,29 +15,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-qO-H6y">
-                                <rect key="frame" x="40" y="117" width="334" height="89"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-qO-H6y">
+                                <rect key="frame" x="40" y="117" width="220" height="83"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVG-YP-k9p">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="KCM-HY-NhU"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1PY-Nw-yLZ">
-                                        <rect key="frame" x="0.0" y="55" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="49" width="220" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a latitude and longitude and tap search" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0H-h7-G6x">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a latitude and longitude and tap search or use your current location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0H-h7-G6x">
                                 <rect key="frame" x="40" y="61" width="334" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fMX-fE-P3G">
+                                <rect key="frame" x="0.0" y="294.5" width="414" height="520.5"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Aot-Ge-ScL"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1he-uQ-iQx">
+                                <rect key="frame" x="40" y="825" width="334" height="30"/>
+                                <state key="normal" title="Map Search"/>
+                                <connections>
+                                    <action selector="mapSearchTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oex-w8-Ayn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or set your search area using the map" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKu-Kn-8Je">
+                                <rect key="frame" x="40" y="254" width="334" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wT7-p2-ioY">
+                                <rect key="frame" x="40" y="214" width="334" height="30"/>
+                                <state key="normal" title="Use Current Location"/>
+                                <connections>
+                                    <action selector="useCurrentLocationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ge9-QU-A1K"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KH3-Za-tfG">
-                                <rect key="frame" x="40" y="226" width="334" height="30"/>
+                                <rect key="frame" x="280" y="143.5" width="94" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yI5-lA-qKc"/>
@@ -46,21 +75,34 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="PKB-qO-H6y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="2Mi-4e-R2l"/>
+                            <constraint firstItem="PKB-qO-H6y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="2C0-2u-G3g"/>
                             <constraint firstItem="H0H-h7-G6x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="4fh-0O-fsK"/>
-                            <constraint firstItem="KH3-Za-tfG" firstAttribute="top" secondItem="PKB-qO-H6y" secondAttribute="bottom" constant="20" id="8Av-pR-qIe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wT7-p2-ioY" secondAttribute="trailing" constant="40" id="Cxj-m4-h17"/>
+                            <constraint firstItem="wT7-p2-ioY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Dz3-pZ-ijB"/>
+                            <constraint firstItem="KH3-Za-tfG" firstAttribute="leading" secondItem="PKB-qO-H6y" secondAttribute="trailing" constant="20" id="Ew7-d7-ZwJ"/>
+                            <constraint firstItem="KH3-Za-tfG" firstAttribute="centerY" secondItem="PKB-qO-H6y" secondAttribute="centerY" id="IlI-ns-ued"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KH3-Za-tfG" secondAttribute="trailing" constant="40" id="KPS-Gq-YYa"/>
                             <constraint firstItem="H0H-h7-G6x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Okt-5D-eIE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PKB-qO-H6y" secondAttribute="trailing" constant="40" id="Uwa-dL-yO3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KH3-Za-tfG" secondAttribute="trailing" constant="40" id="VKV-dY-tc6"/>
+                            <constraint firstItem="fMX-fE-P3G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TxV-Yc-P1h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1he-uQ-iQx" secondAttribute="trailing" constant="40" id="Wx3-tm-Pw9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fKu-Kn-8Je" secondAttribute="trailing" constant="40" id="Yuj-WF-PBC"/>
+                            <constraint firstItem="1he-uQ-iQx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="bee-5d-X5c"/>
                             <constraint firstItem="PKB-qO-H6y" firstAttribute="top" secondItem="H0H-h7-G6x" secondAttribute="bottom" constant="15" id="cyj-IB-wXx"/>
+                            <constraint firstItem="fMX-fE-P3G" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="e9A-DK-aeo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H0H-h7-G6x" secondAttribute="trailing" constant="40" id="g5Y-af-HhM"/>
-                            <constraint firstItem="KH3-Za-tfG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="gyW-Sh-rKY"/>
+                            <constraint firstItem="fMX-fE-P3G" firstAttribute="top" secondItem="fKu-Kn-8Je" secondAttribute="bottom" constant="20" id="ggb-QF-6BX"/>
+                            <constraint firstItem="1he-uQ-iQx" firstAttribute="top" secondItem="fMX-fE-P3G" secondAttribute="bottom" constant="10" id="iuE-gb-yMf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1he-uQ-iQx" secondAttribute="bottom" constant="7" id="l3j-c8-MyT"/>
+                            <constraint firstItem="fKu-Kn-8Je" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="rdI-Im-bhR"/>
+                            <constraint firstItem="fKu-Kn-8Je" firstAttribute="top" secondItem="wT7-p2-ioY" secondAttribute="bottom" constant="10" id="s1M-fj-s4k"/>
+                            <constraint firstItem="wT7-p2-ioY" firstAttribute="top" secondItem="PKB-qO-H6y" secondAttribute="bottom" constant="14" id="tWt-ys-n1J"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="latTextfield" destination="zVG-YP-k9p" id="1s1-Gd-sjD"/>
                         <outlet property="lonTextfield" destination="1PY-Nw-yLZ" id="x1C-oM-X06"/>
+                        <outlet property="mapView" destination="fMX-fE-P3G" id="cWf-Uh-et4"/>
                         <outlet property="searchButton" destination="KH3-Za-tfG" id="zhe-U1-Wj9"/>
                         <segue destination="0ag-Fg-7CS" kind="show" identifier="ShowResults" id="Cp4-cp-YvF"/>
                     </connections>
