@@ -3,27 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		CE37D047240EB4BC00D85D49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37D046240EB4BC00D85D49 /* AppDelegate.swift */; };
 		CE37D049240EB4BC00D85D49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37D048240EB4BC00D85D49 /* SceneDelegate.swift */; };
-		CE37D04B240EB4BC00D85D49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37D04A240EB4BC00D85D49 /* ViewController.swift */; };
+		CE37D04B240EB4BC00D85D49 /* PlaceSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37D04A240EB4BC00D85D49 /* PlaceSearchViewController.swift */; };
 		CE37D04E240EB4BC00D85D49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE37D04C240EB4BC00D85D49 /* Main.storyboard */; };
 		CE37D050240EB4BF00D85D49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE37D04F240EB4BF00D85D49 /* Assets.xcassets */; };
 		CE37D053240EB4BF00D85D49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE37D051240EB4BF00D85D49 /* LaunchScreen.storyboard */; };
+		CE37D05B240EB5BA00D85D49 /* PlacesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37D05A240EB5BA00D85D49 /* PlacesClient.swift */; };
+		CEF81B61240EC8D900235CFE /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF81B60240EC8D900235CFE /* Place.swift */; };
+		DBABCD63A041B597A7F05AF9 /* Pods_Magic_Place_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86465F6AF0F37C9B4008402B /* Pods_Magic_Place_Search.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		573615AEE478E18B0622B9CA /* Pods-Magic Place Search.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic Place Search.release.xcconfig"; path = "Target Support Files/Pods-Magic Place Search/Pods-Magic Place Search.release.xcconfig"; sourceTree = "<group>"; };
+		86465F6AF0F37C9B4008402B /* Pods_Magic_Place_Search.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Magic_Place_Search.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA35493D619D411DE5753510 /* Pods-Magic Place Search.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic Place Search.debug.xcconfig"; path = "Target Support Files/Pods-Magic Place Search/Pods-Magic Place Search.debug.xcconfig"; sourceTree = "<group>"; };
 		CE37D043240EB4BC00D85D49 /* Magic Place Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magic Place Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE37D046240EB4BC00D85D49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE37D048240EB4BC00D85D49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE37D04A240EB4BC00D85D49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE37D04A240EB4BC00D85D49 /* PlaceSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchViewController.swift; sourceTree = "<group>"; };
 		CE37D04D240EB4BC00D85D49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE37D04F240EB4BF00D85D49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE37D052240EB4BF00D85D49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE37D054240EB4BF00D85D49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE37D05A240EB5BA00D85D49 /* PlacesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesClient.swift; sourceTree = "<group>"; };
+		CEF81B60240EC8D900235CFE /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBABCD63A041B597A7F05AF9 /* Pods_Magic_Place_Search.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7192E7237BA1E1D1762F9DC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA35493D619D411DE5753510 /* Pods-Magic Place Search.debug.xcconfig */,
+				573615AEE478E18B0622B9CA /* Pods-Magic Place Search.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CE37D03A240EB4BC00D85D49 = {
 			isa = PBXGroup;
 			children = (
 				CE37D045240EB4BC00D85D49 /* Magic Place Search */,
 				CE37D044240EB4BC00D85D49 /* Products */,
+				7192E7237BA1E1D1762F9DC2 /* Pods */,
+				F2193062408D440481F7A3CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +78,31 @@
 			children = (
 				CE37D046240EB4BC00D85D49 /* AppDelegate.swift */,
 				CE37D048240EB4BC00D85D49 /* SceneDelegate.swift */,
-				CE37D04A240EB4BC00D85D49 /* ViewController.swift */,
+				CE37D05C240EB5CE00D85D49 /* Model */,
+				CE37D04A240EB4BC00D85D49 /* PlaceSearchViewController.swift */,
 				CE37D04C240EB4BC00D85D49 /* Main.storyboard */,
 				CE37D04F240EB4BF00D85D49 /* Assets.xcassets */,
 				CE37D051240EB4BF00D85D49 /* LaunchScreen.storyboard */,
 				CE37D054240EB4BF00D85D49 /* Info.plist */,
 			);
 			path = "Magic Place Search";
+			sourceTree = "<group>";
+		};
+		CE37D05C240EB5CE00D85D49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE37D05A240EB5BA00D85D49 /* PlacesClient.swift */,
+				CEF81B60240EC8D900235CFE /* Place.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2193062408D440481F7A3CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86465F6AF0F37C9B4008402B /* Pods_Magic_Place_Search.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE37D057240EB4BF00D85D49 /* Build configuration list for PBXNativeTarget "Magic Place Search" */;
 			buildPhases = (
+				36C55002E17E94C159D455B0 /* [CP] Check Pods Manifest.lock */,
 				CE37D03F240EB4BC00D85D49 /* Sources */,
 				CE37D040240EB4BC00D85D49 /* Frameworks */,
 				CE37D041240EB4BC00D85D49 /* Resources */,
+				A493361ABE76BE76EFA43594 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,12 +173,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		36C55002E17E94C159D455B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Magic Place Search-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A493361ABE76BE76EFA43594 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Magic Place Search/Pods-Magic Place Search-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Magic Place Search/Pods-Magic Place Search-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Magic Place Search/Pods-Magic Place Search-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE37D03F240EB4BC00D85D49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE37D04B240EB4BC00D85D49 /* ViewController.swift in Sources */,
+				CE37D05B240EB5BA00D85D49 /* PlacesClient.swift in Sources */,
+				CEF81B61240EC8D900235CFE /* Place.swift in Sources */,
+				CE37D04B240EB4BC00D85D49 /* PlaceSearchViewController.swift in Sources */,
 				CE37D047240EB4BC00D85D49 /* AppDelegate.swift in Sources */,
 				CE37D049240EB4BC00D85D49 /* SceneDelegate.swift in Sources */,
 			);
@@ -282,6 +366,7 @@
 		};
 		CE37D058240EB4BF00D85D49 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA35493D619D411DE5753510 /* Pods-Magic Place Search.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +385,7 @@
 		};
 		CE37D059240EB4BF00D85D49 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 573615AEE478E18B0622B9CA /* Pods-Magic Place Search.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
