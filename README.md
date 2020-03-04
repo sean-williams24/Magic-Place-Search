@@ -2,7 +2,7 @@
 
 ## Overview
 
-On initial launch the user is asked to allow location services; enabling these will permit full functionality. Search 'type' is set to 'lodging' and the search also uses the keyword 'surf'. The user can enter a latitude and longitude into the texfields and search for places within a 1km radius. Tapping 'Use Current Location' will perform the searching using the users geo-coded location. The map view can be used to set a search area, just select the area required and tap 'Map Search'.
+On initial launch the user is asked to allow location services; enabling these will permit full functionality. Search 'type' is set to 'lodging' and the search also uses the keyword 'surf'. The user can enter a latitude and longitude into the textfields and search for places within a 1km radius. Tapping 'Use Current Location' will perform the search using the users geo-coded location. The map view can be used to set a search area, just select the area required and tap 'Map Search'.
 
 ## Getting Started
 
