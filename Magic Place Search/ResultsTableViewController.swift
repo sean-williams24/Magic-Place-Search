@@ -42,15 +42,17 @@ class ResultsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as! PlaceTableViewCell
         let place = places[indexPath.section]
         
-        cell.titleLabel.text = place.name
+        cell.titleLabel.text = place.name.uppercased()
         cell.ratingLabel.text = "\(place.rating) / 5"
         
         if let openingHours = place.openingHours {
             if let openNow = openingHours["open_now"] {
                 if openNow {
                     cell.openingHoursLabel.text = "Open Now"
+                    cell.openingHoursLabel.textColor = .green
                 } else {
                     cell.openingHoursLabel.text = "Currently Closed"
+                    cell.openingHoursLabel.textColor = .red
                 }
             }
         }

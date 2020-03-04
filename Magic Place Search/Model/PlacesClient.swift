@@ -13,17 +13,22 @@ import SwiftyJSON
 class PlacesClient {
     
     static let basePlaceSearchURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
-    static let parameters = "&radius=1000&type=cafe&keyword=food"
+    static let parameters = "&type=cafe&keyword=food"
     
-    class func nearbyPlaceSearch(lat: Double, lon: Double, completion: @escaping ([Place]?) -> Void) {
+    class func nearbyPlaceSearch(lat: Double, lon: Double, radius: Double = 1000, completion: @escaping ([Place]?) -> Void) {
         var places: [Place] = []
-        
         let location = "location=\(lat),\(lon)"
-        let url = PlacesClient.basePlaceSearchURL + location + parameters + "&key=" + Auth.key
+        let url = PlacesClient.basePlaceSearchURL + location + "&radius=\(radius)" + parameters + "&key=" + Auth.key
+        
         AF.request(url).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
+
+                if json["status"] == "ZERO_RESULTS" {
+                    completion(nil)
+                }
+                
                 for (key, subjson):(String, JSON) in json["results"] {
                     if let resultDict = subjson.dictionaryObject {
                         if let place = Place(result: resultDict) {
