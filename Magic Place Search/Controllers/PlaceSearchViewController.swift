@@ -106,6 +106,7 @@ class PlaceSearchViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    
 
     // MARK: - Action Methods
     
@@ -117,13 +118,19 @@ class PlaceSearchViewController: UIViewController, CLLocationManagerDelegate {
         
         view.endEditing(true)
         let lat = latTextfield.text!
-        let lon = lonTextfield.text!        
+        let lon = lonTextfield.text!
         
-        let coordinate = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(lon)!)
-        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 4000, longitudinalMeters: 4000)
-        mapView.setRegion(region, animated: true)
+        if lat.isDouble() && lon.isDouble() {
+            let coordinate = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(lon)!)
+            let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 4000, longitudinalMeters: 4000)
+            mapView.setRegion(region, animated: true)
+
+            PlacesClient.nearbyPlaceSearch(lat: Double(lat)!, lon: Double(lon)!, completion: handleSearchCompletion(places:))
+        } else {
+            showAlert(title: "Oh no!", message: "That didn't seem to work, make sure you're using the correct format for latitude and longitude.")
+        }
         
-        PlacesClient.nearbyPlaceSearch(lat: Double(lat)!, lon: Double(lon)!, completion: handleSearchCompletion(places:))
+
     }
     
     
@@ -159,3 +166,12 @@ class PlaceSearchViewController: UIViewController, CLLocationManagerDelegate {
 }
 
 
+extension String {
+     func isDouble() -> Bool {
+        if let _ = Double(self) {
+            return true
+        }
+
+        return false
+    }
+}
