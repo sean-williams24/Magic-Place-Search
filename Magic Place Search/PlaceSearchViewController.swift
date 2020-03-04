@@ -14,8 +14,7 @@ class PlaceSearchViewController: UIViewController {
     
     // MARK: - Outlets
     
-    let apiKey = "AIzaSyC8RiT2xTPcuMLY4xA_mnxpf-8-sgpCbVw"
-    let paidApiKey = "AIzaSyB5V9Bfv5eUU_66A85Yb8WpftWshEJutQY"
+    let key = ""
     let basePlaceSearchURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
     let radius = "&radius=20000"
     let type = "&type=cafe"
@@ -36,7 +35,7 @@ class PlaceSearchViewController: UIViewController {
         let lon = -118.243683
         location = "location=\(lat),\(lon)"
         
-        let url = basePlaceSearchURL + location + radius + type + keyword + "&key=" + paidApiKey
+        let url = basePlaceSearchURL + location + radius + type + keyword + "&key=" + key
         
         AF.request(url).responseJSON { (response) in
             switch response.result {
