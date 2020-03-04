@@ -12,10 +12,6 @@ import Foundation
 
 class PlacesClient {
     
-    struct Auth {
-        static var key = ""
-    }
-    
     
     enum Endpoints {
         

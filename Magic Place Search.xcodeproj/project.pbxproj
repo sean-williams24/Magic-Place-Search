@@ -16,6 +16,8 @@
 		CE37D05B240EB5BA00D85D49 /* PlacesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37D05A240EB5BA00D85D49 /* PlacesClient.swift */; };
 		CEF81B61240EC8D900235CFE /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF81B60240EC8D900235CFE /* Place.swift */; };
 		CEF81B63240FA6D500235CFE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF81B62240FA6D500235CFE /* Auth.swift */; };
+		CEF81B67240FB35900235CFE /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF81B66240FB35900235CFE /* ResultsTableViewController.swift */; };
+		CEF81B69240FB4CF00235CFE /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF81B68240FB4CF00235CFE /* PlaceTableViewCell.swift */; };
 		DBABCD63A041B597A7F05AF9 /* Pods_Magic_Place_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86465F6AF0F37C9B4008402B /* Pods_Magic_Place_Search.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		CE37D05A240EB5BA00D85D49 /* PlacesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesClient.swift; sourceTree = "<group>"; };
 		CEF81B60240EC8D900235CFE /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		CEF81B62240FA6D500235CFE /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		CEF81B66240FB35900235CFE /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		CEF81B68240FB4CF00235CFE /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				CE37D048240EB4BC00D85D49 /* SceneDelegate.swift */,
 				CE37D05C240EB5CE00D85D49 /* Model */,
 				CE37D04A240EB4BC00D85D49 /* PlaceSearchViewController.swift */,
+				CEF81B66240FB35900235CFE /* ResultsTableViewController.swift */,
+				CEF81B68240FB4CF00235CFE /* PlaceTableViewCell.swift */,
 				CE37D04C240EB4BC00D85D49 /* Main.storyboard */,
 				CE37D04F240EB4BF00D85D49 /* Assets.xcassets */,
 				CE37D051240EB4BF00D85D49 /* LaunchScreen.storyboard */,
@@ -224,7 +230,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE37D05B240EB5BA00D85D49 /* PlacesClient.swift in Sources */,
+				CEF81B67240FB35900235CFE /* ResultsTableViewController.swift in Sources */,
 				CEF81B61240EC8D900235CFE /* Place.swift in Sources */,
+				CEF81B69240FB4CF00235CFE /* PlaceTableViewCell.swift in Sources */,
 				CE37D04B240EB4BC00D85D49 /* PlaceSearchViewController.swift in Sources */,
 				CE37D047240EB4BC00D85D49 /* AppDelegate.swift in Sources */,
 				CE37D049240EB4BC00D85D49 /* SceneDelegate.swift in Sources */,

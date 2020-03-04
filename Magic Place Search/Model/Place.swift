@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Place: Codable {
+struct Place {
     let name: String
     let rating: Double
     let openingHours: [String: Bool]?
@@ -27,7 +27,7 @@ struct Place: Codable {
     }
 }
 
-struct OpeningHours: Codable {
+struct OpeningHours {
     let openNow: Bool
     
     enum CodingKeys: String, CodingKey {
